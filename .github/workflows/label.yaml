@@ -1,0 +1,27 @@
+name: Label_action
+on: 
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['${{ inputs.nombre }}']
+            })
+
+inputs:
+  nombre:
+    description: 'Nombre de la etiqueta'
+    required: true
+    default: 'default-label'
