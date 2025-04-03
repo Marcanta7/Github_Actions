@@ -1,0 +1,10 @@
+ame: First Action - single 
+on:
+  worflow_dispatch:
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step
+      - run: echo "Hello, world!"
