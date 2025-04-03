@@ -1,5 +1,5 @@
 import unittest
-from code.python.main import add, subtract, multiply, divide
+from main import add, subtract, multiply, divide
 
 
 class TestMathOperations(unittest.TestCase):
