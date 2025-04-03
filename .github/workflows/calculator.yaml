@@ -1,6 +1,6 @@
 name: calculator
 on:
-  commit:
+  push:
     branches:
       - '*'
 
