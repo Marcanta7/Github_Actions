@@ -1,6 +1,6 @@
 ame: First Action - single 
 on:
-  worflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   say_hello:
