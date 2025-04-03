@@ -1,4 +1,4 @@
-ame: First Action - single 
+name: First Action - single 
 on:
   workflow_dispatch:
 
@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First Step
-      - run: echo "Hello, world!"
+        run: echo "Hello, world!"
