@@ -4,7 +4,7 @@ on:
     branches:
       - '*'
 
-job:
+jobs:
   calculator:
     runs-on: ubuntu-latest
     steps:
