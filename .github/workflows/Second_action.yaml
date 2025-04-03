@@ -1,6 +1,9 @@
 name: Second Action
 
 on:
+  push:
+    branches:
+      - '*'
   workflow_dispatch:
     inputs:
       debug_mode:
@@ -29,4 +32,4 @@ jobs:
       - name: First Step
         run: echo "Hello, world!"
       - name: Second Step
-        run: echo ${{ github.event.inputs.debug_mode }}
+        run: echo ${{ github.event.inputs.sample_value }}
