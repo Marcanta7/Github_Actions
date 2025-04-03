@@ -1,35 +1,51 @@
+def sumar(a, b):
+    """Función para sumar dos números"""
+    return a + b
+
+
 def mostrar_menu():
-    print("Calculadora en Python")
-    print("Operaciones disponibles:")
+    """Muestra el menú de opciones al usuario"""
+    print("\n===== CALCULADORA SIMPLE =====")
     print("1. Sumar")
-    print("2. Restar")
-    print("3. Multiplicar")
-    print("4. Dividir")
+    print("2. Restar (próximamente)")
+    print("3. Multiplicar (próximamente)")
+    print("4. Dividir (próximamente)")
     print("5. Salir")
+    return input("\nSelecciona una opción (1-5): ")
 
 
-def calcular(operacion, num1, num2):
-    if operacion == "1":
-        return num1 + num2
-    elif operacion == "2":
-        return num1 - num2
-    elif operacion == "3":
-        return num1 * num2
-    elif operacion == "4":
-        return num1 / num2 if num2 != 0 else "Error: División por cero"
-    else:
-        return "Opción inválida"
+def obtener_numeros():
+    """Solicita dos números al usuario"""
+    try:
+        num1 = float(input("Introduce el primer número: "))
+        num2 = float(input("Introduce el segundo número: "))
+        return num1, num2
+    except ValueError:
+        print("Error: Por favor, introduce solo números.")
+        return None, None
 
 
-while True:
+def main():
+    """Función principal que ejecuta la calculadora"""
+    while True:
+        opcion = mostrar_menu()
 
-    mostrar_menu()
-    opcion = input("Seleccione una opción (1-5): ")
+        if opcion == '5':
+            print("Gracias por usar la Calculadora Simple. ¡Hasta pronto!")
+            break
+        elif opcion == '1':
+            num1, num2 = obtener_numeros()
+            if num1 is not None and num2 is not None:
+                resultado = sumar(num1, num2)
+                print(f"El resultado de {num1} + {num2} = {resultado}")
 
-    if opcion == "5":
-        print("Saliendo de la calculadora...")
-        break
-    num1 = float(input("Ingrese el primer número: "))
-    num2 = float(input("Ingrese el segundo número: "))
-    resultado = calcular(opcion, num1, num2)
-    print(f"Resultado: {resultado}\n")
+        elif opcion in ['2', '3', '4']:
+            print("Esta operación aún no está disponible. ¡Próximamente!")
+
+        else:
+            print("Opción no válida. Selecciona una opción entre 1 y 5.")
+
+
+# Ejecutar la calculadora
+if __name__ == "__main__":
+    main()

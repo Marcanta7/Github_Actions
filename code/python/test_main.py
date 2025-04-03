@@ -1,18 +1,18 @@
 import unittest
 
 
-from main import add
+from main import sumar
 
 
 class TestCalculadoraFunctions(unittest.TestCase):
     def test_sumar(self):
         """Test de la función sumar"""
-        self.assertEqual(add(2, 3), 5)
-        self.assertEqual(add(-1, 1), 0)
-        self.assertEqual(add(0, 0), 0)
-        self.assertEqual(add(-1, -1), -2)
-        self.assertEqual(add(2.5, 3.5), 6.0)
+        self.assertEqual(sumar(2, 3), 5)
+        self.assertEqual(sumar(-1, 1), 0)
+        self.assertEqual(sumar(0, 0), 0)
+        self.assertEqual(sumar(-1, -1), -2)
+        self.assertEqual(sumar(2.5, 3.5), 6.0)
 
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     unittest.main()
