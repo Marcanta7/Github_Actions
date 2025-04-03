@@ -1,15 +1,26 @@
-name: First Action - single 
+name: Second Action
+
 on:
   workflow_dispatch:
+  inputs:
+    debug_mode:
+      type: boolean
+      description: Debug
+      default: false
+      required: false
+    sample_value:
+      type: string
+      description: Cualquier valor
+      default: ""
+      required: false
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
-
-
     steps:
       - name: First Step
         run: echo "Hello, world!"
+
   Bye_World:
     runs-on: ubuntu-latest
     needs: say_hello
