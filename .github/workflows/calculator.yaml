@@ -16,8 +16,9 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: python -m pip install --upgrade pip
+        run: |
           pip install -r code/python/requirements.txt
+
 
 
       - name: Run linters
