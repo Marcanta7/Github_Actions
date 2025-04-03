@@ -1,0 +1,13 @@
+name: calculator
+on:
+  commit:
+    branches:
+      - '*'
+
+job:
+  calculator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run linters
+        run: |
+          flake8 code/python
